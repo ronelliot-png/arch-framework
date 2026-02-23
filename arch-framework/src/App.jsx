@@ -24,7 +24,7 @@ async function supabaseInsert(table, data) {
   return true;
 }
 
-// ── LOCAL STORAGE HOOK ────────────────────────────────────────────────────────
+// ── LOCAL STORAGE HOOK ─────────────────────noreply@updates.zygnl.io───────────────────────────────────
 // Reads from localStorage on mount, writes on every change.
 // Falls back to defaultValue if key is missing or JSON is corrupt.
 function useLocalStorage(key, defaultValue) {

@@ -28,7 +28,7 @@ async function supabaseInsert(table, data) {
 // Sign up free at resend.com — 100 emails/day free tier
 // Add your API key and the "from" address you've verified in Resend
 const RESEND_API_KEY  = "re_APi1HKLP_C15zJbEBV2K6pc59bgWZ1vJp";
-const FROM_EMAIL      = "onboarding@resend.dev";  // replace with noreply@verticliff.com once domain verified
+const FROM_EMAIL      = "noreply@updates.zygnl.io";
 const SUPPORT_EMAIL   = "ronelliot@zygnl.io";
 
 async function sendWelcomeEmail(name, email) {

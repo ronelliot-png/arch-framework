@@ -1,3 +1,8 @@
+bash
+
+cat /home/claude/arch-framework/api/send-email.js
+Output
+
 export default async function handler(req, res) {
   // Only allow POST
   if (req.method !== "POST") {

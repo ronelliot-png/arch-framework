@@ -24,31 +24,14 @@ async function supabaseInsert(table, data) {
   return true;
 }
 
-// ── EMAIL CONFIG (Resend) ─────────────────────────────────────────────────────
 // ── EMAIL ─────────────────────────────────────────────────────────────────────
-// EmailJS — sends directly from browser, no backend needed
-// Get these values from emailjs.com after setup
-const EMAILJS_SERVICE_ID  = "service_asjqk7v";
-const EMAILJS_TEMPLATE_ID = "template_ouc4x0o";
-const EMAILJS_PUBLIC_KEY  = "-hjjLwWdtoy8c9s_O";
-
 async function sendWelcomeEmail(name, email) {
   try {
-    await fetch("https://api.emailjs.com/api/v1.0/email/send", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        service_id:  EMAILJS_SERVICE_ID,
-        template_id: EMAILJS_TEMPLATE_ID,
-        user_id:     EMAILJS_PUBLIC_KEY,
-        template_params: {
-          to_name:  name,
-          to_email: email,
-          from_name: "VertiCliff",
-          reply_to: "ronelliot@zygnl.io",
-        },
-      }),
-    });
+    await window.emailjs.send(
+      "service_asjqk7v",
+      "template_ouc4x0o",
+      { to_name: name, to_email: email, from_name: "VertiCliff", reply_to: "ronelliot@zygnl.io" }
+    );
   } catch (err) {
     console.error("Email error:", err);
   }
